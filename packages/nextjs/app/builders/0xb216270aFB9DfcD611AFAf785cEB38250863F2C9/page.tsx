@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Page() {
   return (
     <div className="flex flex-col items-center min-h-screen bg-gradient-to-b from-base-200 to-base-300 p-8">
@@ -9,11 +7,16 @@ export default function Page() {
           <div className="relative group">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-full opacity-60 group-hover:opacity-100 transition duration-500"></div>
             <div className="relative w-36 h-36 rounded-full ring-2 ring-white ring-offset-4 ring-offset-pink-50 shadow-md overflow-hidden hover:scale-105 transition-all duration-300">
-              <Image
-                src="https://api.dicebear.com/6.x/personas/svg?seed=Sophie&hair=long&backgroundColor=b6e3f4"
-                alt="Builder Avatar"
-                className="w-full h-full object-cover bg-gradient-to-r from-pink-200 to-purple-200"
-              />
+              <svg width="" height="" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="60" r="60" fill="#F9D5D3" />
+                <circle cx="60" cy="45" r="20" fill="#FFE0BD" />
+                <path d="M40 90c0-15 40-15 40 0v5H40v-5z" fill="#FFE0BD" />
+                <path d="M40 50c0-10 10-20 20-20s20 10 20 20-10 20-20 20-20-10-20-20z" fill="#3E2723" />
+                <path d="M60 65c10 0 20 10 20 25H40c0-15 10-25 20-25z" fill="#F48FB1" />
+                <circle cx="50" cy="42" r="3" fill="#000" />
+                <circle cx="70" cy="42" r="3" fill="#000" />
+                <path d="M52 50c2 2 6 2 8 0" stroke="#000" stroke-width="1.5" fill="none" />
+              </svg>
             </div>
           </div>
 

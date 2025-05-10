@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from "./icons";
 import type { NextPage } from "next";

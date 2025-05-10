@@ -169,7 +169,7 @@ const DmysticalCoderProfile: NextPage = () => {
           {/* Footer message */}
           <div className="text-center my-8">
             <p className="inline-block px-6 py-3 bg-white dark:bg-gray-800 font-bold text-blue-600 dark:text-blue-300 rounded-full shadow-sm hover:shadow-md border border-blue-200 dark:border-blue-700">
-              Built with Scaffold-ETH 2 • Batch 16 • {new Date().getFullYear()}
+              Built with Scaffold-ETH 2 • Batch 16 • 2025
             </p>
           </div>
         </div>

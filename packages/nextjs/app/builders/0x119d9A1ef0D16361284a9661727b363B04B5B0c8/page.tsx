@@ -10,6 +10,25 @@ const DmysticalCoderProfile: NextPage = () => {
   const blockchainSkills = ["Solidity", "Foundry", "Hardhat", "Ethers"];
   const frontendSkills = ["React", "TypeScript", "NextJS", "TailwindCSS"];
 
+  // Define social links mapping
+  const socialLinks = [
+    {
+      href: "https://github.com/dmystical-coder",
+      label: "GitHub Profile",
+      icon: <GitHubIcon />,
+    },
+    {
+      href: "https://twitter.com/dmystical_coder",
+      label: "Twitter Profile",
+      icon: <TwitterIcon />,
+    },
+    {
+      href: "https://linkedin.com/in/abdulsalam-baruwa",
+      label: "LinkedIn Profile",
+      icon: <LinkedInIcon />,
+    },
+  ];
+
   return (
     <>
       {/* Main background - pure white in light mode, dark gray in dark mode */}
@@ -121,33 +140,18 @@ const DmysticalCoderProfile: NextPage = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-gray-700">
               <div className="p-4 flex justify-center md:justify-start gap-4">
-                <a
-                  href="https://github.com/dmystical-coder"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-white hover:bg-blue-500 text-gray-700 hover:text-white focus:ring-2 focus:ring-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-blue-600 shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-600"
-                  aria-label="GitHub Profile"
-                >
-                  <GitHubIcon />
-                </a>
-                <a
-                  href="https://twitter.com/dmystical_coder"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-white hover:bg-blue-500 text-gray-700 hover:text-white focus:ring-2 focus:ring-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-blue-600 shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-600"
-                  aria-label="Twitter Profile"
-                >
-                  <TwitterIcon />
-                </a>
-                <a
-                  href="https://linkedin.com/in/abdulsalam-baruwa"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-white hover:bg-blue-500 text-gray-700 hover:text-white focus:ring-2 focus:ring-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-blue-600 shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-600"
-                  aria-label="LinkedIn Profile"
-                >
-                  <LinkedInIcon />
-                </a>
+                {socialLinks.map(({ href, label, icon }) => (
+                  <a
+                    key={href}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-full bg-white hover:bg-blue-500 text-gray-700 hover:text-white focus:ring-2 focus:ring-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-blue-600 shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-600"
+                    aria-label={label}
+                  >
+                    {icon}
+                  </a>
+                ))}
               </div>
               <div className="p-4 flex flex-col md:flex-row items-center justify-end gap-4">
                 <div className="flex items-center gap-2">

@@ -3,32 +3,33 @@ import { GitHubIcon, LinkedInIcon, TwitterIcon } from "./icons";
 import type { NextPage } from "next";
 import { Address } from "~~/components/scaffold-eth";
 
+// Define skills in arrays for easier management
+const blockchainSkills = ["Solidity", "Foundry", "Hardhat", "Ethers"];
+const frontendSkills = ["React", "TypeScript", "NextJS", "TailwindCSS"];
+
+// Define social links mapping
+const socialLinks = [
+  {
+    href: "https://github.com/dmystical-coder",
+    label: "GitHub Profile",
+    icon: <GitHubIcon />,
+  },
+  {
+    href: "https://twitter.com/dmystical_coder",
+    label: "Twitter Profile",
+    icon: <TwitterIcon />,
+  },
+  {
+    href: "https://linkedin.com/in/abdulsalam-baruwa",
+    label: "LinkedIn Profile",
+    icon: <LinkedInIcon />,
+  },
+];
+
+// Ethereum address
+const myAddress = "0x119d9A1ef0D16361284a9661727b363B04B5B0c8";
+
 const DmysticalCoderProfile: NextPage = () => {
-  const myAddress = "0x119d9A1ef0D16361284a9661727b363B04B5B0c8";
-
-  // Define skills in arrays for easier management
-  const blockchainSkills = ["Solidity", "Foundry", "Hardhat", "Ethers"];
-  const frontendSkills = ["React", "TypeScript", "NextJS", "TailwindCSS"];
-
-  // Define social links mapping
-  const socialLinks = [
-    {
-      href: "https://github.com/dmystical-coder",
-      label: "GitHub Profile",
-      icon: <GitHubIcon />,
-    },
-    {
-      href: "https://twitter.com/dmystical_coder",
-      label: "Twitter Profile",
-      icon: <TwitterIcon />,
-    },
-    {
-      href: "https://linkedin.com/in/abdulsalam-baruwa",
-      label: "LinkedIn Profile",
-      icon: <LinkedInIcon />,
-    },
-  ];
-
   return (
     <>
       {/* Main background - pure white in light mode, dark gray in dark mode */}

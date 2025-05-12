@@ -1,11 +1,10 @@
-import React from "react";
-import CopyAddress from "./CopyAddress";
 import SkillBadge from "./SkillBadge";
 import SocialLinks from "./SocialLinks";
 import { Avatar } from "./ui/avatar";
 import { Badge } from "./ui/badge";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import { Award, FileText, Heart } from "lucide-react";
+import { Address } from "~~/components/scaffold-eth/Address/Address";
 
 interface BuilderProfileProps {
   name: string;
@@ -35,7 +34,7 @@ const BuilderProfile = ({ name, avatarUrl, bio, ethAddress, skills, hobbies, soc
           <div className="text-center items-center">
             <h1 className="text-3xl font-bold text-[#385184]">{name}</h1>
             <div className="flex justify-center">
-              <CopyAddress address={ethAddress} />
+              <Address address={ethAddress} />
             </div>
           </div>
         </CardHeader>

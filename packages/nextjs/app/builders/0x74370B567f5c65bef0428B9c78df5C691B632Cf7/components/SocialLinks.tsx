@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "./ui/button";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 import { Github, Link, Linkedin, Twitter } from "lucide-react";
 
 interface SocialLinksProps {
@@ -22,31 +21,24 @@ const SocialLinks = ({ socials }: SocialLinksProps) => {
 
   return (
     <div className="flex justify-center gap-4">
-      <TooltipProvider>
-        {socialIcons.map(
-          social =>
-            social.url && (
-              <Tooltip key={social.name} delayDuration={300}>
-                <TooltipTrigger asChild>
-                  <Button
-                    size="icon"
-                    variant="outline"
-                    className="h-10 w-10 rounded-full bg-white/80 hover:bg-purple-50 hover:text-[#385184] border-purple-100"
-                    asChild
-                  >
-                    <a href={social.url} target="_blank" rel="noopener noreferrer">
-                      <social.icon size={18} />
-                      <span className="sr-only">{social.name}</span>
-                    </a>
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p className="text-xs">{social.name}</p>
-                </TooltipContent>
-              </Tooltip>
-            ),
-        )}
-      </TooltipProvider>
+      {socialIcons.map(
+        social =>
+          social.url && (
+            <Button
+              key={social.name}
+              size="icon"
+              variant="outline"
+              className="h-10 w-10 rounded-full bg-white/80 hover:bg-purple-50 hover:text-[#385184] border-purple-100 tooltip tooltip-top tooltip-secondary"
+              data-tip={social.name}
+              asChild
+            >
+              <a href={social.url} target="_blank" rel="noopener noreferrer">
+                <social.icon size={18} />
+                <span className="sr-only">{social.name}</span>
+              </a>
+            </Button>
+          ),
+      )}
     </div>
   );
 };

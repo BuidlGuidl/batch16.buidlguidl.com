@@ -1,22 +1,12 @@
 import React from "react";
-import { Button } from "./ui/button";
 import { Github, Link, Linkedin, Twitter } from "lucide-react";
 
-interface SocialLinksProps {
-  socials: {
-    twitter?: string;
-    github?: string;
-    linkedin?: string;
-    website?: string;
-  };
-}
-
-const SocialLinks = ({ socials }: SocialLinksProps) => {
+const SocialLinks = () => {
   const socialIcons = [
-    { name: "Twitter", url: socials.twitter, icon: Twitter },
-    { name: "GitHub", url: socials.github, icon: Github },
-    { name: "LinkedIn", url: socials.linkedin, icon: Linkedin },
-    { name: "Website", url: socials.website, icon: Link },
+    { name: "Twitter", url: "https://twitter.com/armolas_06", icon: Twitter },
+    { name: "GitHub", url: "https://github.com/armolas", icon: Github },
+    { name: "LinkedIn", url: "https://linkedin.com/in/arowolomuritadhor", icon: Linkedin },
+    { name: "Website", url: "https://armolasportfolio.netlify.app", icon: Link },
   ].filter(social => social.url);
 
   return (
@@ -24,19 +14,17 @@ const SocialLinks = ({ socials }: SocialLinksProps) => {
       {socialIcons.map(
         social =>
           social.url && (
-            <Button
+            <a
               key={social.name}
-              size="icon"
-              variant="outline"
-              className="h-10 w-10 rounded-full bg-white/80 hover:bg-purple-50 hover:text-[#385184] border-purple-100 tooltip tooltip-top tooltip-secondary"
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-circle btn-outline bg-white/80 hover:bg-purple-50 hover:text-[#385184] border-purple-100 tooltip tooltip-top"
               data-tip={social.name}
-              asChild
             >
-              <a href={social.url} target="_blank" rel="noopener noreferrer">
-                <social.icon size={18} />
-                <span className="sr-only">{social.name}</span>
-              </a>
-            </Button>
+              <social.icon size={18} />
+              <span className="sr-only">{social.name}</span>
+            </a>
           ),
       )}
     </div>

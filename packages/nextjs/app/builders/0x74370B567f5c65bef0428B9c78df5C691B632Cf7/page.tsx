@@ -20,12 +20,6 @@ const Index = () => {
           { name: "Smart Contracts", proficiency: 4 },
         ]}
         hobbies={["Open Source", "Hackathons", "Debugging", "DeFi", "Painting", "Music", "Coooking"]}
-        socials={{
-          twitter: "https://twitter.com/armolas_06",
-          github: "https://github.com/armolas",
-          linkedin: "https://linkedin.com/in/arowolomuritadhor",
-          website: "https://armolasportfolio.netlify.app",
-        }}
       />
     </div>
   );

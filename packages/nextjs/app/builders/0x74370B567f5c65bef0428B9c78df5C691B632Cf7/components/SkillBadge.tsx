@@ -1,5 +1,4 @@
 import React from "react";
-import { cn } from "../lib/utils";
 
 interface SkillBadgeProps {
   name: string;
@@ -15,7 +14,7 @@ const SkillBadge = ({ name, proficiency }: SkillBadgeProps) => {
       <span className="text-sm font-medium text-gray-700">{name}</span>
       <div className="flex mt-1 gap-1">
         {[...Array(5)].map((_, i) => (
-          <div key={i} className={cn("h-1.5 w-4 rounded-full", i < level ? "bg-[#385184]" : "bg-gray-200")} />
+          <div key={i} className={`h-1.5 w-4 rounded-full ${i < level ? "bg-primary" : "bg-base-300"}`} />
         ))}
       </div>
     </div>

@@ -10,8 +10,12 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: process.env.NEXT_PUBLIC_IGNORE_BUILD_ERROR === "true",
   },
   images: {
-    domains: ["avatars.githubusercontent.com"],
-    unoptimized: process.env.NEXT_PUBLIC_IPFS_BUILD === "true",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
+    ],
   },
   webpack: config => {
     config.resolve.fallback = { fs: false, net: false, tls: false };
@@ -25,6 +29,9 @@ const isIpfs = process.env.NEXT_PUBLIC_IPFS_BUILD === "true";
 if (isIpfs) {
   nextConfig.output = "export";
   nextConfig.trailingSlash = true;
+  nextConfig.images = {
+    unoptimized: true,
+  };
 }
 
 module.exports = nextConfig;

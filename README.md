@@ -9,15 +9,15 @@
 ## Introduction
 
 Let’s get you up to speed on what this program is all about and what you can look forward to.
-At the heart of it all is this GitHub repository, where you’ll collaborate with your batch members by working on issues and submitting pull requests. To graduate successfully you will need to complete [Issue #1](/../../issues/9), [Issue #2](/../../issues/8) and show engagment in solving other issues. If you run into any issues or have any questions, reach out to us in the Telegram group.
+At the heart of it all is this GitHub repository, where you’ll collaborate with your batch members by working on issues and submitting pull requests. To graduate successfully you will need to complete [Issue a)](/../../issues/9), [Issue b)](/../../issues/8) and show engagment in solving other issues. If you run into any issues or have any questions, reach out to us in the Telegram group.
 
 Here’s a quick rundown of what you’ll be doing:
 
 1. **Introduce Yourself:** Start by introducing yourself to the batch and mentors in GitHub discussion.
-2. **Complete [Issue #1](/../../issues/9):** 'Check in' to our smart contract by writing one of your own.
-3. **Move to [Issue #2](/../../issues/8):** Create a personal page and submit it to the batch repository via a pull request (PR).
+2. **Complete [Issue a)](/../../issues/9):** 'Check in' to our smart contract by writing one of your own.
+3. **Move to [Issue b)](/../../issues/8):** Create a personal page and submit it to the batch repository via a pull request (PR).
 4. **Choose Open Issues:** After completing the initial tasks, explore and pick other open issues to work on—either individually or by collaborating with other batch members.
-5. **Graduate Successfully:** To graduate and mint the Graduation NFT (#9), you must complete [Issue #1](/../../issues/9), [Issue #2](/../../issues/8) and gives your best effort in solving other issues.
+5. **Graduate Successfully:** To graduate and mint the Graduation NFT (#9), you must complete [Issue a)](/../../issues/9), [Issue b)](/../../issues/8) and gives your best effort in solving other issues.
 
 We aim to empower you with the skills of dApp development and collaborating with other developers. Remember, we’ll be with you every step of the way. Let’s build something amazing together!
 
@@ -27,7 +27,7 @@ First, since our contract is deployed on the Arbitrum chain, we’ve ensured you
 
 Then you will head to the open Introductions discussion in your batch's GitHub repo and make a post introducing yourself. Also feel free to introduce yourself in the batch Telegram channel as well if you want.
 
-Next head to the Issues tab of your batch's Github repo. Once you complete Issue #1, move on to Issue #2. Everyone will complete the first two issues on their own, then can start taking on the other issues. Work and collaborate with your batch members in both Github and Telegram for a real-world experience. If you're working on an issue, looking to collaborate on an issue, or want feedback on an issue or pull request, shout out to your batch!
+Next head to the Issues tab of your batch's Github repo. Once you complete Issue a), move on to Issue b). Everyone will complete the first two issues on their own, then can start taking on the other issues. Work and collaborate with your batch members in both Github and Telegram for a real-world experience. If you're working on an issue, looking to collaborate on an issue, or want feedback on an issue or pull request, shout out to your batch!
 
 > 😲 Github can seem daunting! Take a look at our detailed guide on the "Fork and Pull" Github process [here](https://gist.github.com/ZakGriffith/69d1eb8baebddd7d370b87a65a7e3ec0).
 

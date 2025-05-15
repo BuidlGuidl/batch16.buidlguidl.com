@@ -10,8 +10,8 @@ const Index = () => {
         bio="Passionate web3 builder and developer focused on creating decentralized applications. Contributing to buildguild and exploring the intersection of blockchain technology, user experience, and community building. Always learning and sharing knowledge with fellow builders."
         ethAddress="0x74370B567f5c65bef0428B9c78df5C691B632Cf7"
         skills={[
-          { name: "React", proficiency: 5 },
-          { name: "Solidity", proficiency: 4 },
+          { name: "React", proficiency: 4 },
+          { name: "Solidity", proficiency: 5 },
           { name: "TypeScript", proficiency: 4 },
           { name: "Blockchain", proficiency: 4 },
           { name: "Next.js", proficiency: 4 },

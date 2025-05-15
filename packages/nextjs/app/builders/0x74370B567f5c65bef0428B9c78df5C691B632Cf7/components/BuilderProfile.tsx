@@ -22,7 +22,7 @@ const BuilderProfile = ({ name, avatarUrl, bio, ethAddress, skills, hobbies }: B
       <div className="flex flex-col items-center space-y-4 pt-8 pb-6">
         <div className="avatar">
           <div className="w-32 rounded-full ring ring-[#385184] ring-offset-base-100 ring-offset-2 shadow-lg">
-            <Image src={avatarUrl} alt={name} className="object-cover" />
+            <Image src={avatarUrl} alt={name} className="object-cover" width={128} height={128} />
           </div>
         </div>
         <div className="text-center items-center">
@@ -61,7 +61,7 @@ const BuilderProfile = ({ name, avatarUrl, bio, ethAddress, skills, hobbies }: B
           </div>
           <div className="flex flex-wrap gap-2 pl-7">
             {hobbies.map(hobby => (
-              <div key={hobby} className="badge badge-outline bg-white/60 text-gray-700">
+              <div key={hobby} className="badge badge-outline bg-white/60 text-gray-700 p-2">
                 {hobby}
               </div>
             ))}

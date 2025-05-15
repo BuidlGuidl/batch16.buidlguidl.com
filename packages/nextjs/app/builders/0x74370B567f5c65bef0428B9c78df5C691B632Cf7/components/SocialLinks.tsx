@@ -1,14 +1,14 @@
 import React from "react";
 import { Github, Link, Linkedin, Twitter } from "lucide-react";
 
-const SocialLinks = () => {
-  const socialIcons = [
-    { name: "Twitter", url: "https://twitter.com/armolas_06", icon: Twitter },
-    { name: "GitHub", url: "https://github.com/armolas", icon: Github },
-    { name: "LinkedIn", url: "https://linkedin.com/in/arowolomuritadhor", icon: Linkedin },
-    { name: "Website", url: "https://armolasportfolio.netlify.app", icon: Link },
-  ].filter(social => social.url);
+const socialIcons = [
+  { name: "Twitter", url: "https://twitter.com/armolas_06", icon: Twitter },
+  { name: "GitHub", url: "https://github.com/armolas", icon: Github },
+  { name: "LinkedIn", url: "https://linkedin.com/in/arowolomuritadhor", icon: Linkedin },
+  { name: "Website", url: "https://armolasportfolio.netlify.app", icon: Link },
+];
 
+const SocialLinks = () => {
   return (
     <div className="flex justify-center gap-4">
       {socialIcons.map(

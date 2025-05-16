@@ -10,7 +10,7 @@ const socialIcons = [
 
 const SocialLinks = () => {
   return (
-    <div className="flex justify-center gap-4">
+    <div className="flex justify-center gap-4 ">
       {socialIcons.map(
         social =>
           social.url && (
@@ -19,7 +19,7 @@ const SocialLinks = () => {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-circle btn-outline bg-white/80 hover:bg-purple-50 hover:text-[#385184] border-purple-100 tooltip tooltip-top"
+              className="btn btn-circle btn-outline bg-primary hover:bg-purple-50 text-primary-content hover:text-[#385184] border-purple-100 tooltip tooltip-top"
               data-tip={social.name}
             >
               <social.icon size={18} />

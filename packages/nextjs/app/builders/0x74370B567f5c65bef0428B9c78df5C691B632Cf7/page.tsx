@@ -3,7 +3,7 @@ import BuilderProfile from "./components/BuilderProfile";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#385184] to-white dark:from-gray-900 dark:to-gray-800 flex items-center justify-center p-4 text-black dark:text-white">
+    <div className="min-h-screen bg-gradient-to-br from-white to-[#385184] dark:from-[#385184] dark:to-[#2a3655] flex items-center justify-center p-4 text-black dark:text-white/80">
       <BuilderProfile
         name="Muritadhor Arowolo"
         avatarUrl="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80"

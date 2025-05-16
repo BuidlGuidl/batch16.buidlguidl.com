@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import type { NextPage } from "next";
 import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
@@ -15,11 +16,23 @@ const Home: NextPage = () => {
     <>
       <div className="flex items-center flex-col grow pt-10">
         <div className="px-5">
+          <div className="relative w-32 h-32 mb-6 mx-auto">
+            <Image
+              src="/batch-logo.webp"
+              alt="Batch 16 Logo"
+              width={288}
+              height={288}
+              className="object-contain"
+              priority
+            />
+          </div>
           <h1 className="text-center">
             <span className="block text-2xl mb-2">Welcome to</span>
-            <span className="block text-4xl font-bold">Batch 16</span>
+            <span className="block text-4xl font-bold">Batch #16</span>
           </h1>
+          <h2 className="text-center text-xl mb-4">Building the Future of Web3</h2>
           <p className="text-center text-lg">Get started by taking a look at your batch GitHub repository.</p>
+
           <p className="text-lg flex gap-2 justify-center">
             <span className="font-bold">Checked in builders count:</span>
             {isLoading ? (

@@ -2,6 +2,7 @@
 
 // @refresh reset
 import { Balance } from "../Balance";
+import { BatchStatusIndicators } from "../BatchStatusIndicators";
 import { AddressInfoDropdown } from "./AddressInfoDropdown";
 import { AddressQRCodeModal } from "./AddressQRCodeModal";
 import { WrongNetworkDropdown } from "./WrongNetworkDropdown";
@@ -49,6 +50,7 @@ export const RainbowKitCustomConnectButton = () => {
                       {chain.name}
                     </span>
                   </div>
+                  <BatchStatusIndicators address={account.address as Address} />
                   <AddressInfoDropdown
                     address={account.address as Address}
                     displayName={account.displayName}

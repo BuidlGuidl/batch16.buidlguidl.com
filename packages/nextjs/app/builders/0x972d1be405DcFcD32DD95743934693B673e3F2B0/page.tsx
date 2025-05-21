@@ -11,10 +11,10 @@ interface ProfileData {
   email: string;
   social: {
     github: string;
+    twitter: string;
   };
 }
 
-// Profile data defined outside the component as a constant
 const profile: ProfileData = {
   name: "Developer Millburn",
   title: "Smart Contract Developer",
@@ -24,10 +24,9 @@ const profile: ProfileData = {
   email: "millburncrack@gmail.com",
   social: {
     github: "https://github.com/MillburnCrackDev",
+    twitter: "https://x.com/Millburn",
   },
 };
-
-// Social links defined outside the component with direct href values
 const socialLinks = [
   {
     href: profile.social.github,
@@ -44,7 +43,6 @@ const socialLinks = [
 ];
 
 const MillburnBuilderPage: NextPage = () => {
-
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden">
@@ -63,7 +61,6 @@ const MillburnBuilderPage: NextPage = () => {
             <h2 className="text-lg text-gray-600 dark:text-gray-400 mb-3">{profile.title}</h2>
 
             <div className="flex items-center text-gray-600 dark:text-gray-400 mb-4">
-              {/* Direct use of icon instead of StyledIcon component */}
               <span className="inline-block mr-2 text-gray-600 dark:text-gray-400">
                 <FaMapMarkerAlt size={16} />
               </span>
@@ -83,8 +80,9 @@ const MillburnBuilderPage: NextPage = () => {
                   rel="noopener noreferrer"
                   className={`text-gray-600 dark:text-gray-400 ${lightHoverColor} ${darkHoverColor} transition-colors duration-300 ease-in-out`}
                 >
-                  {/* Direct use of icon instead of StyledIcon component */}
-                  <span className={`inline-block text-gray-600 dark:text-gray-400 ${lightHoverColor} ${darkHoverColor}`}>
+                  <span
+                    className={`inline-block text-gray-600 dark:text-gray-400 ${lightHoverColor} ${darkHoverColor}`}
+                  >
                     <Icon size={24} />
                   </span>
                 </a>

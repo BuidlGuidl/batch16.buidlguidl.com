@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { NextPage } from "next";
-import { IconType } from "react-icons";
 import { FaEnvelope, FaGithub, FaMapMarkerAlt } from "react-icons/fa";
 
 interface ProfileData {
@@ -16,43 +15,6 @@ interface ProfileData {
   };
 }
 
-interface StyledIconProps extends React.HTMLAttributes<HTMLSpanElement> {
-  icon: IconType;
-  size?: number;
-  color?: string;
-}
-
-interface SocialLink {
-  href: string;
-  icon: IconType;
-  lightHoverColor: string;
-  darkHoverColor: string;
-}
-
-const StyledIcon: React.FC<StyledIconProps> = ({ icon: Icon, className, size, color, ...props }) => {
-  return (
-    <span className={`inline-block ${className}`} {...props}>
-      <Icon size={size} color={color} />
-    </span>
-  );
-};
-
-// Social links configuration moved outside the component
-const socialLinks: SocialLink[] = [
-  {
-    href: "",
-    icon: FaGithub,
-    lightHoverColor: "hover:text-gray-900",
-    darkHoverColor: "dark:hover:text-gray-200",
-  },
-  {
-    href: "",
-    icon: FaEnvelope,
-    lightHoverColor: "hover:text-red-500",
-    darkHoverColor: "dark:hover:text-red-400",
-  },
-];
-
 const MillburnBuilderPage: NextPage = () => {
   const profile: ProfileData = {
     name: "Developer Millburn",
@@ -67,11 +29,21 @@ const MillburnBuilderPage: NextPage = () => {
     },
   };
 
-  // Dynamically populate href values
-  const populatedSocialLinks = socialLinks.map((link, index) => ({
-    ...link,
-    href: [profile.social.github, profile.social.twitter, `mailto:${profile.email}`][index],
-  }));
+  // Social links with direct href values as recommended by maintainer
+  const socialLinks = [
+    {
+      href: profile.social.github,
+      icon: FaGithub,
+      lightHoverColor: "hover:text-gray-900",
+      darkHoverColor: "dark:hover:text-gray-200",
+    },
+    {
+      href: `mailto:${profile.email}`,
+      icon: FaEnvelope,
+      lightHoverColor: "hover:text-red-500",
+      darkHoverColor: "dark:hover:text-red-400",
+    },
+  ];
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
@@ -91,7 +63,10 @@ const MillburnBuilderPage: NextPage = () => {
             <h2 className="text-lg text-gray-600 dark:text-gray-400 mb-3">{profile.title}</h2>
 
             <div className="flex items-center text-gray-600 dark:text-gray-400 mb-4">
-              <StyledIcon icon={FaMapMarkerAlt} size={16} className="mr-2 text-gray-600 dark:text-gray-400" />
+              {/* Direct use of icon instead of StyledIcon component */}
+              <span className="inline-block mr-2 text-gray-600 dark:text-gray-400">
+                <FaMapMarkerAlt size={16} />
+              </span>
               <span className="text-sm">{profile.location}</span>
             </div>
 
@@ -100,7 +75,7 @@ const MillburnBuilderPage: NextPage = () => {
             </p>
 
             <div className="flex space-x-6 mb-6">
-              {populatedSocialLinks.map(({ href, icon: Icon, lightHoverColor, darkHoverColor }, index) => (
+              {socialLinks.map(({ href, icon: Icon, lightHoverColor, darkHoverColor }, index) => (
                 <a
                   key={index}
                   href={href}
@@ -108,11 +83,12 @@ const MillburnBuilderPage: NextPage = () => {
                   rel="noopener noreferrer"
                   className={`text-gray-600 dark:text-gray-400 ${lightHoverColor} ${darkHoverColor} transition-colors duration-300 ease-in-out`}
                 >
-                  <StyledIcon
-                    icon={Icon}
-                    size={24}
-                    className={`text-gray-600 dark:text-gray-400 ${lightHoverColor} ${darkHoverColor}`}
-                  />
+                  {/* Direct use of icon instead of StyledIcon component */}
+                  <span
+                    className={`inline-block text-gray-600 dark:text-gray-400 ${lightHoverColor} ${darkHoverColor}`}
+                  >
+                    <Icon size={24} />
+                  </span>
                 </a>
               ))}
             </div>

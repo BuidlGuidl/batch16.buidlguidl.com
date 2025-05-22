@@ -47,7 +47,8 @@
     "vercel:yolo": "yarn workspace @se-2/nextjs vercel:yolo",
     "ipfs": "yarn workspace @se-2/nextjs ipfs",
     "vercel:login": "yarn workspace @se-2/nextjs vercel:login",
-    "verify": "yarn hardhat:verify"
+    "verify": "yarn hardhat:verify",
+    "update-profiles": "node packages/nextjs/scripts/update-builder-profiles.mjs"
   },
   "packageManager": "yarn@3.2.3",
   "devDependencies": {

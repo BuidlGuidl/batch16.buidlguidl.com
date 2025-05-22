@@ -1,6 +1,6 @@
 "use client";
 
-import { Address, zeroAddress } from "viem";
+import { zeroAddress } from "viem";
 import { useAccount } from "wagmi";
 import { CheckCircleIcon, UserGroupIcon, XCircleIcon } from "@heroicons/react/24/solid";
 import { useScaffoldReadContract } from "~~/hooks/scaffold-eth";
@@ -13,7 +13,7 @@ export const BatchStatusIndicators = () => {
     contractName: "BatchRegistry",
     functionName: "allowList",
     args: [userAddress ?? zeroAddress],
-    chainId: 42161, 
+    chainId: 42161,
   });
 
   // Check if address has checked in
@@ -21,9 +21,9 @@ export const BatchStatusIndicators = () => {
     contractName: "BatchRegistry",
     functionName: "yourContractAddress",
     args: [userAddress ?? zeroAddress],
-    chainId: 42161, 
+    chainId: 42161,
   });
-  
+
   const isInBatch = allowListStatus !== undefined ? !!allowListStatus : null;
   const isCheckedIn = contractAddress !== undefined ? contractAddress !== zeroAddress : null;
 

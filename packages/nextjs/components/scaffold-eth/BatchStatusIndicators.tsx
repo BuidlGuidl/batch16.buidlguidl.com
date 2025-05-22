@@ -1,58 +1,31 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Address, zeroAddress } from "viem";
-import { useAccount, useReadContract } from "wagmi";
+import { useAccount } from "wagmi";
 import { CheckCircleIcon, UserGroupIcon, XCircleIcon } from "@heroicons/react/24/solid";
-import externalContracts from "~~/contracts/externalContracts";
+import { useScaffoldReadContract } from "~~/hooks/scaffold-eth";
 
-interface BatchStatusIndicatorsProps {
-  address?: Address;
-}
-
-export const BatchStatusIndicators = ({ address }: BatchStatusIndicatorsProps) => {
-  const { address: connectedAddress } = useAccount();
-  const userAddress = address || connectedAddress;
-
-  const [isInBatch, setIsInBatch] = useState<boolean | null>(null);
-  const [isCheckedIn, setIsCheckedIn] = useState<boolean | null>(null);
-
-  // Get contract details from externalContracts
-  const batchRegistryContract = externalContracts[42161]?.BatchRegistry;
+export const BatchStatusIndicators = () => {
+  const { address: userAddress } = useAccount();
 
   // Check if address is in allowList (batch member)
-  const { data: allowListStatus, isLoading: isLoadingAllowList } = useReadContract(
-    userAddress && batchRegistryContract
-      ? {
-          address: batchRegistryContract.address,
-          abi: batchRegistryContract.abi,
-          functionName: "allowList",
-          args: [userAddress],
-        }
-      : undefined,
-  );
+  const { data: allowListStatus, isLoading: isLoadingAllowList } = useScaffoldReadContract({
+    contractName: "BatchRegistry",
+    functionName: "allowList",
+    args: [userAddress ?? zeroAddress],
+    chainId: 42161, 
+  });
 
   // Check if address has checked in
-  const { data: contractAddress, isLoading: isLoadingContractAddress } = useReadContract(
-    userAddress && batchRegistryContract
-      ? {
-          address: batchRegistryContract.address,
-          abi: batchRegistryContract.abi,
-          functionName: "yourContractAddress",
-          args: [userAddress],
-        }
-      : undefined,
-  );
-
-  useEffect(() => {
-    if (allowListStatus !== undefined) {
-      setIsInBatch(!!allowListStatus);
-    }
-
-    if (contractAddress !== undefined) {
-      setIsCheckedIn(contractAddress !== zeroAddress);
-    }
-  }, [allowListStatus, contractAddress]);
+  const { data: contractAddress, isLoading: isLoadingContractAddress } = useScaffoldReadContract({
+    contractName: "BatchRegistry",
+    functionName: "yourContractAddress",
+    args: [userAddress ?? zeroAddress],
+    chainId: 42161, 
+  });
+  
+  const isInBatch = allowListStatus !== undefined ? !!allowListStatus : null;
+  const isCheckedIn = contractAddress !== undefined ? contractAddress !== zeroAddress : null;
 
   if (!userAddress) return null;
 

@@ -50,7 +50,7 @@ export const RainbowKitCustomConnectButton = () => {
                       {chain.name}
                     </span>
                   </div>
-                  <BatchStatusIndicators address={account.address as Address} />
+                  <BatchStatusIndicators />
                   <AddressInfoDropdown
                     address={account.address as Address}
                     displayName={account.displayName}

@@ -11,7 +11,6 @@ interface ProfileData {
   email: string;
   social: {
     github: string;
-    twitter: string;
   };
 }
 
@@ -24,7 +23,6 @@ const profile: ProfileData = {
   email: "millburncrack@gmail.com",
   social: {
     github: "https://github.com/MillburnCrackDev",
-    twitter: "https://x.com/Millburn",
   },
 };
 const socialLinks = [

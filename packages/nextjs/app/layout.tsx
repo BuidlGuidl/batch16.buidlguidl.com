@@ -4,7 +4,7 @@ import { ThemeProvider } from "~~/components/ThemeProvider";
 import "~~/styles/globals.css";
 import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 
-const thumbnailPath = "/thumbnail.png";
+const thumbnailPath = "/thumbnail.jpg";
 
 export const metadata = getMetadata({
   title: "Scaffold-Eth | Batch 16 Buidlguidl Stake",
